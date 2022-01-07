@@ -1,3 +1,4 @@
+import { CourseInfoComponent } from './courses/course.info.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ReplacePipe } from './pipe/replace.pipe';
 import { CourseListComponent } from './courses/course.list.component';
@@ -17,16 +18,20 @@ import { Error404Component } from './404/error-404.component';
     StarComponent,
     ReplacePipe,
     NavBarComponent,
+    CourseInfoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
       {
-        path: '', redirectTo: 'courses', pathMatch: 'full'
+        path: 'courses', component: CourseListComponent
       },
       {
-        path: 'courses', component: CourseListComponent
+        path: 'courses/info/:id', component: CourseInfoComponent
+      },
+      {
+        path: '', redirectTo: 'courses', pathMatch: 'full'
       },
       {
         path: '**', component: Error404Component

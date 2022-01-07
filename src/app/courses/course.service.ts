@@ -10,6 +10,10 @@ retrieveAll(): Course[] {
   return this.courses
 }
 
+retrieveById(id: number): any {
+ return this.courses.find((courseIterator: Course) => courseIterator.id === id)
+}
+
 courses: Course[] = [ {
   id: 1,
   name: 'Angular: Forms',
@@ -55,7 +59,7 @@ courses: Course[] = [ {
   description: ''
  },
  {
-  id: 3,
+  id: 5,
   name: 'Angular: Animations',
   imageUrl: '/assets/images/animations.png',
   price: 100,
